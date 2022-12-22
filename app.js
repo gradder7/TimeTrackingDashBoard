@@ -180,22 +180,23 @@ function UpdateData(data) {
     for (let i = 0; i < data.length; i++) {
       //   console.log(data[i].title);
       main.innerHTML += `
-    <div class="card">
-          <a href="#" class="details">
-            <section class="details__title">
-              <h2>${data[i].title}</h2>
-              <i class="fa-solid fa-ellipsis"></i>
-            </section>
-            <section class="details__time">
-              <h3 data-num="${data[i].timeframes.daily.current}">
-                ${data[i].timeframes.daily.current}hrs
-              </h3>
-              <p>Yesterday - ${data[i].timeframes.daily.previous}hrs</p>
-            </section>
-          </a>
-        </div>
+      <div class="card">
+      <a href="#" class="details">
+      <section class="details__title">
+      <h2>${data[i].title}</h2>
+      <i class="fa-solid fa-ellipsis"></i>
+      </section>
+      <section class="details__time">
+      <h3 data-num="${data[i].timeframes.daily.current}">
+      ${data[i].timeframes.daily.current}hrs
+      </h3>
+      <p>Yesterday - ${data[i].timeframes.daily.previous}hrs</p>
+      </section>
+      </a>
+      </div>
       `;
     }
+    counterAnimation();
   }
 
   //get Weekly
@@ -220,6 +221,7 @@ function UpdateData(data) {
         </div>
       `;
     }
+    counterAnimation();
   }
 
   //monthly
@@ -244,6 +246,7 @@ function UpdateData(data) {
         </div>
       `;
     }
+    counterAnimation();
   }
   //on window load the data should show be weekly
   window.addEventListener("load", getWeekly());
@@ -251,4 +254,26 @@ function UpdateData(data) {
   dailyBtn.addEventListener("click", getDaily);
   weeklyBtn.addEventListener("click", getWeekly);
   monthlyBtn.addEventListener("click", getMonthly);
+
 }
+
+//   counter animation
+let counterAnimation = () => {
+  let counterNumber = document.querySelectorAll("h3");
+  let speed = 1000;
+  counterNumber.forEach((counter) => {
+    console.log(counter);
+    let startValue = 0;
+    let targetValue = +counter.getAttribute("data-num");
+    if (targetValue !== 0) {
+      let duration = Math.floor(speed / targetValue);
+      let nowCount = setInterval(() => {
+        startValue++;
+        counter.textContent = `${startValue}hrs`;
+        if (startValue === targetValue) {
+          clearInterval(nowCount);
+        }
+      }, duration);
+    }
+  });
+};
