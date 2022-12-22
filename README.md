@@ -9,7 +9,7 @@ Thanks for checking out this front-end coding challenge.
 **To do this challenge, you need a basic understanding of HTML, CSS and JavaScript.**
 
 ## Problem Solved
-- [Web Hosted linnk](https://timetrackingdashboards.netlify.app/)
+- Live hosted URL: [Click me to visit the page](https://timetrackingdashboards.netlify.app/)
 
 ## The challenge
 
