@@ -139,13 +139,13 @@ header .profile{
     color: white;
     margin-top: .25rem;
 }
-.nav{
+.button_all{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 2rem;
 }
-.nav button{
+.button_all button{
     color: var(--nav-text);
     background: transparent;
     font-size: 1.125rem;
@@ -340,7 +340,7 @@ footer a:hover{
         }
     }
     header .profile,
-    .nav,
+    .button_all,
     .details__time{
         flex-direction: column;
         align-items: flex-start;
@@ -355,7 +355,7 @@ footer a:hover{
     .profile__text h1{
         font-size: 2.75rem;
     }
-    .nav{
+    .button_all{
         gap: 1rem;
     }
     .container main{
