@@ -1,9 +1,10 @@
+//selecting buttons
 const dailyBtn = document.querySelector(".daily-btn");
 const weeklyBtn = document.querySelector(".weekly-btn");
 const monthlyBtn = document.querySelector(".monthly-btn");
 
 //ignore for now 5-12 line
-//toogle the theme
+//toogle the theme 
 const toggle = document.getElementsByClassName("toggle");
 // console.log(toggle);
 toggle[0].addEventListener("click", () => {
